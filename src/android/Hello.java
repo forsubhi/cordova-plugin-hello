@@ -5,6 +5,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import 	android.app.Activity;
 
 public class Hello extends CordovaPlugin {
 
@@ -19,7 +20,7 @@ public class Hello extends CordovaPlugin {
             Activity activity = cordova.getActivity();
             PackageManager pm = activity.getPackageManager();
             Intent launchIntent = pm.getLaunchIntentForPackage("com.kuzufab");
-            context.startActivity(launchIntent);
+            activity.startActivity(launchIntent);
             
          //   callbackContext.success(message);
 
