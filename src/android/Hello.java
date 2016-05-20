@@ -26,6 +26,8 @@ public class Hello extends CordovaPlugin  {
             activity.startActivityForResult(launchIntent,success);
             this.callbackContext=callbackContext;
             //   callbackContext.success(message);
+            callbackContext.success("test1");
+             callbackContext.success("test2");
 
             return true;
 
