@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaPlugin;
 public class Hello extends CordovaPlugin  {
 
     public  static  int success =10;
