@@ -7,6 +7,7 @@ import org.json.JSONException;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import org.apache.cordova.CallbackContext;
 public class Hello extends Activity {
 
     public  static  int success =10;
