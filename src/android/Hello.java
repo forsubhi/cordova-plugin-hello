@@ -13,7 +13,12 @@ public class Hello extends CordovaPlugin {
 
             String name = data.getString(0);
             String message = "Hi, " + name;
-            callbackContext.success(message);
+            
+            PackageManager pm = context.getPackageManager();
+            Intent launchIntent = pm.getLaunchIntentForPackage("com.kuzufab");
+            context.startActivity(launchIntent);
+            
+         //   callbackContext.success(message);
 
             return true;
 
