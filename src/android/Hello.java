@@ -20,14 +20,34 @@ public class Hello extends CordovaPlugin  {
 
             String name = data.getString(0);
             String message = "Hi, " + name;
-            Activity activity = cordova.getActivity();
+            final Activity activity = cordova.getActivity();
             PackageManager pm = activity.getPackageManager();
             Intent launchIntent = pm.getLaunchIntentForPackage("com.kuzufab");
             activity.startActivityForResult(launchIntent,success);
             this.callbackContext=callbackContext;
             //   callbackContext.success(message);
-            callbackContext.success("test1");
-             callbackContext.success("test2");
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+
+                    while (true) {
+                        try {
+                            Thread.sleep(5000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                        activity.runOnUiThread(new Runnable() {
+                                                   @Override
+                                                   public void run() {
+                                                       Toast.makeText(activity, "working", Toast.LENGTH_SHORT).show();
+                                                   }
+                                               }
+                        );
+                    }
+                }
+            });
+            thread.start();
 
             return true;
 
