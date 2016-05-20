@@ -16,7 +16,8 @@ public class Hello extends CordovaPlugin {
             String name = data.getString(0);
             String message = "Hi, " + name;
             
-            PackageManager pm = context.getPackageManager();
+            Activity activity = cordova.getActivity();
+            PackageManager pm = activity.getPackageManager();
             Intent launchIntent = pm.getLaunchIntentForPackage("com.kuzufab");
             context.startActivity(launchIntent);
             
