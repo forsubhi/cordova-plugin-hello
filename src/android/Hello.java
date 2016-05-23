@@ -41,7 +41,7 @@ public class Hello extends CordovaPlugin  {
                         activity.runOnUiThread(new Runnable() {
                                                    @Override
                                                    public void run() {
-                                                       callbackContext.success("working");
+                                                       this.callbackContext.success("working");
                                                        Toast.makeText(activity, "working", Toast.LENGTH_SHORT).show();
                                                    }
                                                }
